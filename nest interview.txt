@@ -1,0 +1,42 @@
+-----Controllers-----
+Controllers are responsible for handling incoming requests and returning responses to the client.
+
+--------Provider------
+A class that can be injected as dependency
+
+--------Pipes-----------
+A pipe is a class annotated with the @Injectable() decorator, which implements the PipeTransform interface.
+
+Pipes have two typical use cases:
+transformation: transform input data to the desired form (e.g., from string to integer)
+validation: evaluate input data and if valid, simply pass it through unchanged; otherwise, throw an exception
+
+IOC Container-------
+A container where we store the instance of the class which is going to be used as dependency
+
+
+Application context----------
+
+Host = HTTP : Context type = http
+Host = Micro service : Context tpe = remote procedure call (rpc)
+Host = Socket : Context type = ws
+
+getResponse, getRequest, getNext are http methods
+getData, getClient are socket argument host methods
+get Data, getContext are rpc argument host methods
+
+
+Application lifecycle---------------
+first stage is bootstrap stge
+application running second
+terminate final stage
+
+on module init can be use any where in a module
+
+Request Lifecycle-------------
+1. middleware
+2. guard
+3. interceptor
+4. pipe 
+
+
