@@ -39,4 +39,16 @@ Request Lifecycle-------------
 3. interceptor
 4. pipe 
 
+Middleware---------
+
+it acts like a middle man betweeen req and res
+global middleware are created using function middleware
+
+to make a middleware global in appmodule write code same as the module but .forRoutes('*')
+
+
+Interceptors--------
+
+a class decorated with injectable implements nest interceptor class
+same as middleware but we can work with req and res where as middleware work only with req
 
