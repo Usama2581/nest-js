@@ -1,48 +1,49 @@
-// import { query } from 'express';
-import { UserService } from './users.service';
-import { Body, Controller, Param, Post, Get, Put, Query, Delete } from '@nestjs/common';
-
-
+import { UserDTO } from './../dto/users.dto';
+import { UsersService } from './users.service';
+import { Body, Controller, Delete, Get, Param, Post, Put, ValidationPipe } from '@nestjs/common';
 
 @Controller('/users')
 
-export class UserController {
+export class UsersController {
 
-    constructor(private UserService: UserService) { }
-
-    @Post('/post')
-    async create(@Body() body) {
-        await this.UserService.create(body)
-        return { message: 'User added' }
-    }
+    constructor(private user: UsersService){}
 
     @Get('/all')
-    async findAllUsers () {
-    //    const id = param.id
-    //    console.log(id)
-       const data = await this.UserService.findAll()
-       return { data: data }
-    }
-
-    @Put('/update/:id')
-    async updateUser(@Param() param, @Body() body) {
-        const id = param.id
-        const user = await this.UserService.update(id, body)
-        return { user }
+    async getAllUsers() {
+        const user = await this.user.findAll()
+        return user
     }
 
     @Get('/one/:id')
-    async findOneUser(@Param() param) {
-         const id = param.id 
-        const user = await this.UserService.findOne(id)
-        return { user }
-    }
-
-    @Delete('/delete/:id')
-    async delete (@Param() param) {
+    async getOneUsers(@Param() param) {
         const id = param.id
-        const user = await this.UserService.delete(id)
-        return { user }
+        // console.log(id)
+        const user = await this.user.findOneUser(id)
+        return user
     }
 
+    @Post('/add')
+    async createOne(@Body(new ValidationPipe({ transform: true })) body: UserDTO) {
+        const user = await this.user.addUser(body)
+        return user
+    }
+
+    
+    @Put('/update/:id')
+    async upadteOne(@Body() body, @Param() param) {
+        const id = param.id
+        const user = await this.user.updateUser(id, body)
+        return user
+    }
+
+    @Delete('/:id')
+    async delete(@Param() param) {
+        const id = param.id
+        const user = await this.user.deleteUser(id)
+        return user
+    }
+    
+
+    
+    
 }
