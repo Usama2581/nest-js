@@ -1,0 +1,44 @@
+*****************************SWAPPING VARIABLES**********************************
+let a = 10, b = 3
+// console.log(a,b)
+ a = a + b   // 13
+ b = a - b // 10
+ a = a - b
+ console.log(a,b)
+
+
+****************CALL BACK & HIGHER ORDER FUNCTION******************
+a function which takes another function as argument or return a function is called higher order function
+example: map, filter, forEach
+
+a function which is called inside the body of another function known as call back 
+
+
+***************Check vowel and consonent in string**************************
+const name = 'usama'
+let vowels = 0, consonent = 0
+
+for(let i=0; i<name.length; i++) {
+    if(name[i] === 'a' || name[i] === 'e' || name[i] === 'i' || name[i] === 'o' || name[i] === 'u') {
+        vowels++
+    }
+    else{
+        consonent++
+    }
+}
+console.log(vowels)
+console.log(consonent)
+
+****************Reverse the integer**********************
+const num = -12
+let newNum = num.toString().split('').reverse().join('')
+if(newNum.endsWith('-')) {
+    newNum = `-${newNum}`
+    let newNumm =  parseInt(newNum)
+console.log(newNumm)
+}
+
+
+********************** == vs === ****************************
+== used when both the values are same not datatype
+=== used when the both datatypes are same not value 
