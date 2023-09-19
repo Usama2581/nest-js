@@ -27,6 +27,7 @@ get Data, getContext are rpc argument host methods
 
 
 Application lifecycle---------------
+
 first stage is bootstrap stge
 application running second
 terminate final stage
