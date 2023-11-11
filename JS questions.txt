@@ -42,3 +42,38 @@ console.log(newNumm)
 ********************** == vs === ****************************
 == used when both the values are same not datatype
 === used when the both datatypes are same not value 
+
+************NODE JS************************
+1. 3 things are main in architechture call stack, nide api, callback queue
+2. node api and callback queue will not be used every time
+3. call stack is used every time
+
+******CALL STACK*********************
+It register the function and according to serise it execute them. lifo
+
+
+
+*****Node api**************
+pogram is executed in call stack if program has any function which is inheited from c node js is made up of c languge it store in nodeapi than it move to call backe queue one by one after the executonj of progam it exected in call stack 
+
+****VAR*****
+VAR has global scope if declared it can be found outside block but cannot be used function it declared in function
+
+*****LET AND CONST*******
+They are introduced in es6 both has block scope cannot be used outside block
+
+to access a variable outside block or function remove keyword let, const or var e.g a = 10 it can be used outside
+
+
+
+***********THREADING****************
+node js is single thread meaning that code is executed line after line it is synchronous whereas multi thread means program can run in parallel it is asynch
+
+JavaScript is inherently single-threaded and synchronous. However, it supports asynchronous programming through features like callbacks, Promises, and async/await. 
+
+
+
+
+
+
+
