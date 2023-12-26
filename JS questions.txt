@@ -72,6 +72,37 @@ node js is single thread meaning that code is executed line after line it is syn
 JavaScript is inherently single-threaded and synchronous. However, it supports asynchronous programming through features like callbacks, Promises, and async/await. 
 
 
+*********DOCKER*********
+
+1. image is tempkate of project and container is running instace of image
+2.image is readonly it cant be updated
+3. container helps to run image
+4. dokcer hub is an anline tool while docker desktop is app
+5. *.txt used to ignore all files from creating image that have txt extension add it in .dockerignore file
+6. image running in container can't be deleted
+7. docker image rm image-name to delete image by terminal
+8. 
+
+
+******CONSTRUCTOR**********
+Its a special method that is automatically called when object is created
+
+******SOCKET********
+
+// .on is used to catch event
+// .emit is used to create custom event
+
+// --reserved server events---
+// connecton, disconnect, reconnect, ping, join, leave, message
+
+// --reserved client side events---
+// connect, connect_error, connect_timeout, reconnect
+
+
+// -----BroadCasting----------
+//  how many users are connected on server and to give message to them
+// io.socket.emit is used to broadcast globally, notification sent to all users
+//  socket.broadcast.emit used to give message to all except new connected user or user who trigger event 
 
 
 
